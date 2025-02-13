@@ -1,0 +1,397 @@
+:root {
+    --primary-color: #3498db;
+    --text-color: #2c3e50;
+    --background-color: #f7f9fc;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --secondary-color: #27ae60;
+    --suggestion-background: #f1f4f8;
+    --suggestion-hover: #e6eaf0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    transform: translateY(-20px);
+    opacity: 0;
+    animation: fadeInUp 0.8s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+header p {
+    color: #7f8c8d;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.search-wrapper {
+    position: relative;
+}
+
+.search-container {
+    display: flex;
+    border: 2px solid #e0e6ed;
+    border-radius: 40px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.search-container:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+#searchBar {
+    flex-grow: 1;
+    border: none;
+    padding: 15px 20px;
+    font-size: 16px;
+    outline: none;
+    background-color: transparent;
+    font-family: 'Inter', sans-serif;
+}
+
+#searchButton {
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+#searchButton:hover {
+    background-color: #2980b9;
+}
+
+#searchButton:active {
+    transform: scale(0.95);
+}
+
+#searchButton svg {
+    stroke: white;
+}
+
+.suggestions {
+    position: absolute;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px var(--shadow-color);
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 10;
+    display: none;
+}
+
+.suggestions.active {
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+}
+
+.suggestion-item {
+    background-color: var(--suggestion-background);
+    padding: 12px 15px;
+    margin: 5px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.suggestion-item:hover {
+    background-color: var(--suggestion-hover);
+    transform: translateX(5px);
+}
+
+.p4xton-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 60px;
+}
+
+.p4xton-button:hover {
+    max-width: 200px;
+    padding: 10px 20px;
+}
+
+.p4xton-button::after {
+    content: " to P4XTON Series";
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.p4xton-button:hover::after {
+    opacity: 1;
+}
+
+.confirmation-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.confirmation-modal.show {
+    opacity: 1;
+    display: flex;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    transform: scale(0.7);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    max-width: 400px;
+    width: 90%;
+}
+
+.confirmation-modal.show .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal-content p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.modal-buttons button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#yes-button {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+#no-button {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#yes-button:hover {
+    background-color: #2ecc71;
+    transform: translateY(-3px);
+}
+
+#no-button:hover {
+    background-color: #c0392b;
+    transform: translateY(-3px);
+}
+
+.keyword-info-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.keyword-info-modal.show {
+    opacity: 1;
+    display: flex;
+}
+
+.keyword-info-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.1), 
+        0 10px 20px rgba(52, 152, 219, 0.05);
+    max-width: 600px;
+    width: 90%;
+    max-height: 75vh;
+    overflow-y: auto;
+    position: relative;
+    transform: scale(0.7);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid rgba(52, 152, 219, 0.1);
+}
+
+.keyword-info-modal.show .keyword-info-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.close-keyword-info {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: #bdc3c7;
+    transition: color 0.3s ease, transform 0.2s ease;
+    outline: none;
+}
+
+.close-keyword-info:hover {
+    color: var(--primary-color);
+    transform: rotate(90deg);
+}
+
+.keyword-info-title {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 700;
+    border-bottom: 2px solid rgba(52, 152, 219, 0.1);
+    padding-bottom: 10px;
+}
+
+.keyword-info-description {
+    color: var(--text-color);
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.keyword-details {
+    text-align: left;
+    background-color: #f9fafb;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.keyword-details p {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.keyword-details .description {
+    margin-top: 20px;
+    line-height: 1.9;
+    color: #2c3e50;
+    font-style: italic;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.keyword-details strong {
+    color: var(--primary-color);
+    min-width: 120px;
+    display: inline-block;
+    margin-right: 15px;
+    font-weight: 600;
+}
+
+.keyword-tags {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.keyword-tags .tag {
+    background-color: var(--suggestion-background);
+    color: var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(52, 152, 219, 0.2);
+}
+
+.keyword-tags .tag:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: scale(1.05);
+}

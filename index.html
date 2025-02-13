@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KnowAll - Your Knowledge Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>KnowAll</h1>
+            <p>Explore Knowledge Without Limits</p>
+        </header>
+        
+        <main>
+            <div class="search-wrapper">
+                <div class="search-container">
+                    <input type="text" id="searchBar" placeholder="What are you curious about?">
+                    <button id="searchButton">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                </div>
+                <div id="suggestions" class="suggestions"></div>
+            </div>
+        </main>
+    </div>
+
+    <div id="p4xton-button" class="p4xton-button">Go</div>
+    <div id="confirmation-modal" class="confirmation-modal">
+        <div class="modal-content">
+            <p>Do you want to go to P4XTON Series?</p>
+            <div class="modal-buttons">
+                <button id="yes-button">Yes</button>
+                <button id="no-button">No</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="keyword-info-modal" class="keyword-info-modal">
+        <div class="keyword-info-content">
+            <button id="close-keyword-info" class="close-keyword-info">&times;</button>
+            <div id="keyword-info-container"></div>
+        </div>
+    </div>
+
+    <script src="script.js" type="module"></script>
+    <script src="keyword-info.js" type="module"></script>
+</body>
+</html>
