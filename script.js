@@ -1,4 +1,6 @@
-export class KnowAllSearch {
+import { KeywordInfoManager } from './keyword-info.js';
+
+class KnowAllSearch {
   constructor() {
     this.searchBar = document.getElementById('searchBar');
     this.searchButton = document.getElementById('searchButton');
@@ -25,18 +27,7 @@ export class KnowAllSearch {
       { original: 'G Foundation', aliases: ['G', 'Foundation'] },
       { original: 'Allocation Task Force', aliases: ['ATF', 'Allocation', 'Task', 'Force'] },
       { original: 'DAKASI', aliases: ['DAKASI'] },
-      { original: 'Universal Assassin Organisation', aliases: ['UAO', 'Universal', 'Assassin', 'Organisation'] },
-      { original: 'Nathan', aliases: ['Nathan'] },
-      { original: 'The Underworld', aliases: ['The Underworld', 'Underworld'] },
-      { original: 'Red Dust', aliases: ['Red Dust', 'Red', 'Dust'] },
-      { original: 'The LordGods', aliases: ['The LordGods', 'LordGods', '「The LordGods」'] },
-      { original: '333', aliases: ['333'] },
-      { original: 'Core of Universe', aliases: ['Core of Universe', 'CoU', 'Core', 'Universe'] },
-      { original: 'Inuza', aliases: ['Inuza'] },
-      { original: 'Jokod', aliases: ['Jokod'] },
-      { original: 'Trasy', aliases: ['Trasy'] },
-      { original: 'Sirys', aliases: ['Sirys'] },
-      { original: 'The Holyght', aliases: ['The Holyght', 'Holyght', '「The Holyght」'] }
+      { original: 'Universal Assassin Organisation', aliases: ['UAO', 'Universal', 'Assassin', 'Organisation'] }
     ];
 
     this.keywordInfoManager = new KeywordInfoManager();

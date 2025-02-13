@@ -92,47 +92,7 @@ export class KeywordInfoManager {
       },
       'Nathan': {
         title: 'Nathan',
-        description: 'Nathan is a character with an intriguing background, whose role and significance are gradually unfolding in the narrative.'
-      },
-      'Red Dust': {
-        title: 'Red Dust',
-        description: 'Red Dust represents a significant element in the story, potentially a location, phenomenon, or group with important narrative implications.'
-      },
-      'The LordGods': {
-        title: 'The LordGods',
-        description: 'The LordGods appear to be a powerful entity or group that plays a crucial role in the overarching cosmic narrative.'
-      },
-      '333': {
-        title: '333',
-        description: 'A mysterious number or concept that holds significance within the story\'s universe, potentially representing a key event, group, or symbolic meaning.'
-      },
-      'Core of Universe': {
-        title: 'Core of Universe (CoU)',
-        description: 'The Core of Universe represents a fundamental concept or location that is central to the cosmic narrative, potentially holding immense strategic or metaphysical importance.'
-      },
-      'CoU': {
-        title: 'Core of Universe (CoU)',
-        description: 'The Core of Universe represents a fundamental concept or location that is central to the cosmic narrative, potentially holding immense strategic or metaphysical importance.'
-      },
-      'Inuza': {
-        title: 'Inuza',
-        description: 'Inuza is a character or entity with unique characteristics that contribute to the depth and complexity of the story.'
-      },
-      'Jokod': {
-        title: 'Jokod',
-        description: 'Jokod is an intriguing element in the narrative, whose significance adds layers to the unfolding plot.'
-      },
-      'Trasy': {
-        title: 'Trasy',
-        description: 'Trasy represents an important component of the story, bringing unique perspectives or actions to the narrative.'
-      },
-      'Sirys': {
-        title: 'Sirys',
-        description: 'Sirys is a character or concept that plays a meaningful role in the broader storyline.'
-      },
-      'The Holyght': {
-        title: 'The Holyght',
-        description: 'The Holyght appears to be a significant entity or concept with profound implications in the narrative.'
+        description: 'A character whose role and significance are yet to be fully revealed in the story.'
       }
     };
 
