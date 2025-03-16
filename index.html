@@ -1,53 +1,158 @@
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KnowAll - Your Knowledge Hub</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>哈夫克社区</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/jpeg" href="/haavkicon.jpg">
+    <script type="importmap">
+    {
+        "imports": {
+            "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+        }
+    }
+    </script>
 </head>
 <body>
-    <div class="container">
+    <div id="app">
         <header>
-            <h1>KnowAll</h1>
-            <p>Explore Knowledge Without Limits</p>
+            <div class="header-icon">
+                <img src="/haavkicon.jpg" alt="Haavk Community Icon">
+            </div>
+            <h1>哈夫克社区</h1>
         </header>
-        
+
         <main>
-            <div class="search-wrapper">
-                <div class="search-container">
-                    <input type="text" id="searchBar" placeholder="What are you curious about?">
-                    <button id="searchButton">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                        </svg>
-                    </button>
+            <section id="members">
+                <h2>哈夫克社区成员</h2>
+                <div class="member-list">
+                    <div class="member-section">
+                        <h3>社长</h3>
+                        <ul>
+                            <li data-name="P4XT0N">
+                                P4XT0N
+                                <span class="tooltip">加强阿列克谢</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="member-section">
+                        <h3>全部成员</h3>
+                        <ul>
+                            <li data-name="P4XT0N">P4XT0N</li>
+                            <li data-name="Kionababy">
+                                Kionababy
+                                <span class="tooltip">kionababy是老板娘👸🏻</span>
+                            </li>
+                            <li data-name="Rister">Rister</li>
+                            <li data-name="shenxiaohuo">shenxiaohuo</li>
+                            <li data-name="shuraxxxx">shuraxxxx</li>
+                            <li data-name="wwwbzd">wwwbzd</li>
+                            <li data-name="yingying">
+                                yingying
+                                <span class="tooltip">樱姐是这个👍</span>
+                            </li>
+                            <li data-name="YULUO">
+                                YULUO
+                                <span class="tooltip">哈夫克x九重天yyds！</span>
+                            </li>
+                            <li data-name="Apple">Apple</li>
+                            <li data-name="chenaiCN">
+                                chenaiCN
+                                <span class="tooltip">社长是帅哥</span>
+                            </li>
+                            <li data-name="chla">chla</li>
+                            <li data-name="elmard_mo">elmard_mo</li>
+                            <li data-name="GUJIA416520">GUJIA416520</li>
+                            <li data-name="hnnnnnnh">
+                                hnnnnnnh
+                                <span class="tooltip">胡桃天下第一可爱</span>
+                            </li>
+                            <li data-name="HTDG">
+                                HTDG
+                                <span class="tooltip">我是胡桃的狗</span>
+                            </li>
+                            <li data-name="Jueshadada">
+                                Jueshadada
+                                <span class="tooltip">哎哟你干嘛哈哈</span>
+                            </li>
+                            <li data-name="LiMaoBaoBao">LiMaoBaoBao</li>
+                            <li data-name="Miner_Crazy">Miner_Crazy</li>
+                            <li data-name="KeQingbaobao">KeQingbaobao</li>
+                            <li data-name="qianvvb">qianvvb</li>
+                            <li data-name="qwerasd">qwerasd</li>
+                            <li data-name="Superboy">Superboy</li>
+                            <li data-name="weiyuling23333">
+                                weiyuling23333
+                                <span class="tooltip">没有社长就没有哈夫克😭😭😭😭</span>
+                            </li>
+                            <li data-name="vvv">vvv</li>
+                            <li data-name="Surviver_CoCo">Surviver_CoCo</li>
+                            <li data-name="Tanghelove">
+                                Tanghelove
+                                <span class="tooltip">社区观光客</span>
+                            </li>
+                            <li data-name="WUFANFAN">WUFANFAN</li>
+                            <li data-name="xiao_xiao_A">
+                                xiao_xiao_A
+                                <span class="tooltip">社长是出生</span>
+                            </li>
+                            <li data-name="xiaowan_PwP">xiaowan_PwP</li>
+                            <li data-name="Xiaoyudadi">Xiaoyudadi</li>
+                            <li data-name="xuanzixu">xuanzixu</li>
+                            <li data-name="Yankon">
+                                Yankon
+                                <span class="tooltip">让他们说去吧，经历只属于自己</span>
+                            </li>
+                            <li data-name="ZUN">ZUN</li>
+                            <li data-name="ZeroV">ZeroV</li>
+                            <li data-name="ssssongyi">
+                                ssssongyi
+                                <span class="tooltip" style="background-color: rgba(108, 48, 208, 0.9);">加强天道超</span>
+                            </li>
+                            <li data-name="zyt_2013">zyt_2013</li>
+                            <li data-name="9999999999999991">9999999999999991</li>
+                            <li data-name="shengge">
+                                shengge
+                                <span class="tooltip">我，大道之行！</span>
+                            </li>
+                            <li data-name="_Li_xiang_">
+                                _Li_xiang_
+                                <span class="tooltip">背负火影之名</span>
+                            </li>
+                            <li data-name="_ShangDe">_ShangDe</li>
+                            <li data-name="KABONG">KABONG</li>
+                        </ul>
+                    </div>
                 </div>
-                <div id="suggestions" class="suggestions"></div>
-            </div>
+            </section>
         </main>
-    </div>
 
-    <div id="p4xton-button" class="p4xton-button">Go</div>
-    <div id="confirmation-modal" class="confirmation-modal">
-        <div class="modal-content">
-            <p>Do you want to go to P4XTON Series?</p>
-            <div class="modal-buttons">
-                <button id="yes-button">Yes</button>
-                <button id="no-button">No</button>
+        <footer>
+            <p>2025 哈夫克社区</p>
+            <p>2025 Haavk Community</p>
+        </footer>
+        <div class="interaction-button" id="interactionButton">🎵</div>
+        <div class="music-player" id="musicPlayer" style="display: none;">
+            <div class="music-player-header">
+                <h4>音乐播放器</h4>
+                <button class="music-player-close" id="closeMusicPlayer">&times;</button>
+            </div>
+            <div class="music-player-album" id="musicAlbum">🎵</div>
+            <div class="music-player-details">
+                <h5 id="musicTitle">默认音乐</h5>
+                <p id="musicArtist">哈夫克社区</p>
+            </div>
+            <div class="music-player-progress" id="musicProgress">
+                <div class="music-player-progress-bar" id="musicProgressBar"></div>
+            </div>
+            <div class="music-player-controls">
+                <button id="prevButton">⏮️</button>
+                <button class="play-pause" id="playPauseButton">▶️</button>
+                <button id="nextButton">⏭️</button>
             </div>
         </div>
     </div>
 
-    <div id="keyword-info-modal" class="keyword-info-modal">
-        <div class="keyword-info-content">
-            <button id="close-keyword-info" class="close-keyword-info">&times;</button>
-            <div id="keyword-info-container"></div>
-        </div>
-    </div>
-
-    <script src="script.js" type="module"></script>
-    <script src="keyword-info.js" type="module"></script>
+    <script type="module" src="/app.js"></script>
 </body>
 </html>
